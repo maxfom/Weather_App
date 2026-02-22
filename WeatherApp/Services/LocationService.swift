@@ -22,11 +22,6 @@ final class LocationService: NSObject, LocationServiceProtocol {
     func requestLocation(_ completion: @escaping (Result<CLLocationCoordinate2D, Error>) -> Void) {
         self.completion = completion
 
-        guard CLLocationManager.locationServicesEnabled() else {
-            finish(with: .success(Constants.moscow))
-            return
-        }
-
         switch manager.authorizationStatus {
         case .notDetermined:
             manager.requestWhenInUseAuthorization()

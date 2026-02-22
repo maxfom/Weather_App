@@ -18,6 +18,8 @@
 		AA0000000000000000000038 /* DailyForecastRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000018 /* DailyForecastRowView.swift */; };
 		AA0000000000000000000039 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000019 /* WeatherViewController.swift */; };
 		AA000000000000000000003A /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000020 /* WeatherViewModel.swift */; };
+		AA0000000000000000000080 /* WeatherSnapshotMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000070 /* WeatherSnapshotMapperTests.swift */; };
+		AA0000000000000000000081 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000072 /* XCTest.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,9 @@
 		AA0000000000000000000020 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		AA0000000000000000000021 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA0000000000000000000022 /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA0000000000000000000070 /* WeatherSnapshotMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherSnapshotMapperTests.swift; sourceTree = "<group>"; };
+		AA0000000000000000000071 /* WeatherAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA0000000000000000000072 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = System/Library/Frameworks/XCTest.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +46,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA0000000000000000000091 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA0000000000000000000081 /* XCTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +69,7 @@
 				AA0000000000000000000007 /* Services */,
 				AA0000000000000000000008 /* UI */,
 				AA0000000000000000000009 /* ViewModel */,
+				AA000000000000000000000A /* WeatherAppTests */,
 				AA0000000000000000000021 /* Info.plist */,
 				AA0000000000000000000003 /* Products */,
 			);
@@ -66,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				AA0000000000000000000022 /* WeatherApp.app */,
+				AA0000000000000000000071 /* WeatherAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -123,7 +138,25 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		AA000000000000000000000A /* WeatherAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				AA0000000000000000000070 /* WeatherSnapshotMapperTests.swift */,
+			);
+			path = WeatherAppTests;
+			sourceTree = SOURCE_ROOT;
+		};
 /* End PBXGroup section */
+
+/* Begin PBXContainerItemProxy section */
+		AA00000000000000000000B0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA0000000000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AA0000000000000000000050;
+			remoteInfo = WeatherApp;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXNativeTarget section */
 		AA0000000000000000000050 /* WeatherApp */ = {
@@ -143,7 +176,33 @@
 			productReference = AA0000000000000000000022 /* WeatherApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		AA00000000000000000000A0 /* WeatherAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA00000000000000000000C0 /* Build configuration list for PBXNativeTarget "WeatherAppTests" */;
+			buildPhases = (
+				AA0000000000000000000090 /* Sources */,
+				AA0000000000000000000091 /* Frameworks */,
+				AA0000000000000000000092 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AA00000000000000000000B1 /* PBXTargetDependency */,
+			);
+			name = WeatherAppTests;
+			productName = WeatherAppTests;
+			productReference = AA0000000000000000000071 /* WeatherAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
+
+/* Begin PBXTargetDependency section */
+		AA00000000000000000000B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AA0000000000000000000050 /* WeatherApp */;
+			targetProxy = AA00000000000000000000B0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXProject section */
 		AA0000000000000000000001 /* Project object */ = {
@@ -155,6 +214,10 @@
 				TargetAttributes = {
 					AA0000000000000000000050 = {
 						CreatedOnToolsVersion = 16.3;
+					};
+					AA00000000000000000000A0 = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = AA0000000000000000000050;
 					};
 				};
 			};
@@ -172,12 +235,20 @@
 			projectRoot = "";
 			targets = (
 				AA0000000000000000000050 /* WeatherApp */,
+				AA00000000000000000000A0 /* WeatherAppTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		AA0000000000000000000042 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA0000000000000000000092 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -202,6 +273,14 @@
 				AA0000000000000000000038 /* DailyForecastRowView.swift in Sources */,
 				AA0000000000000000000039 /* WeatherViewController.swift in Sources */,
 				AA000000000000000000003A /* WeatherViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA0000000000000000000090 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA0000000000000000000080 /* WeatherSnapshotMapperTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +438,53 @@
 			};
 			name = Release;
 		};
+		AA00000000000000000000C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.max.WeatherAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeatherApp.app/WeatherApp";
+			};
+			name = Debug;
+		};
+		AA00000000000000000000C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.max.WeatherAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeatherApp.app/WeatherApp";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -376,6 +502,15 @@
 			buildConfigurations = (
 				AA0000000000000000000064 /* Debug */,
 				AA0000000000000000000065 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA00000000000000000000C0 /* Build configuration list for PBXNativeTarget "WeatherAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA00000000000000000000C1 /* Debug */,
+				AA00000000000000000000C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
