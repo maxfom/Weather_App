@@ -1,8 +1,8 @@
-# WeatherApp (UIKit, no Storyboard)
+# WeatherApp (UIKit, без Storyboard)
 
-Тестовое iOS-приложение погоды на Swift + UIKit, полностью программно.
+Тестовое iOS-приложение погоды на Swift + UIKit
 
-## Что реализовано по ТЗ
+## ТЗ
 
 - Один экран с погодной информацией:
   - текущая погода;
@@ -37,14 +37,8 @@
 
 - UIKit only, без Storyboard.
 - `async/await` для сетевых запросов.
-- Иконки погодных условий загружаются из WeatherAPI и кэшируются в `ImageLoader`.
+- Иконки погодные загружаются с WeatherAPI и кэшируются в `ImageLoader`.
 - `Info.plist` содержит `NSLocationWhenInUseUsageDescription`.
-
-## Сборка
-
-```bash
-xcodebuild -project WeatherApp.xcodeproj -scheme WeatherApp -configuration Debug -sdk iphonesimulator build CODE_SIGNING_ALLOWED=NO
-```
 
 ## Тесты
 
@@ -52,9 +46,3 @@ xcodebuild -project WeatherApp.xcodeproj -scheme WeatherApp -configuration Debug
 - остаток часов текущего дня + все часы следующего;
 - корректная граница по часовому поясу из API (`tz_id`);
 - ограничение daily-прогноза тремя днями.
-
-Запуск:
-
-```bash
-xcodebuild -project WeatherApp.xcodeproj -scheme WeatherApp -configuration Debug -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.4' test CODE_SIGNING_ALLOWED=NO
-```
